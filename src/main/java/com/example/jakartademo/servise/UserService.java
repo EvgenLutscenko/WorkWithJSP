@@ -28,4 +28,16 @@ public class UserService {
     public User updateUser(int id, String login, String password){
         return userRepository.updateUser(id, login, password);
     }
+
+    public void printAllAdminsToConsole(){
+        System.out.println(userRepository.getAllAdmin());
+    }
+
+    public List<User> getAllAdmin() {
+        return userRepository.getAllAdmin();
+    }
+
+    public User updateAdmin(int id, String login, String password){
+        return userRepository.updateAdmin(id, login, password);
+    }
 }

@@ -12,7 +12,7 @@ public class UserRepository {
             new User(6, "sevenUser", "qwerty"), new User(7, "eightUser", "qwerty")
             );
 
-
+    private List<User> repoAdmins = Arrays.asList(new User(1, "admin", "admin"));
     public List<User> getAllUsers(){
         return repo;
     }
@@ -26,6 +26,22 @@ public class UserRepository {
         repo.get(id - 1).setLogin(login);
 
         return repo.get(id - 1);
+    }
+
+
+    public List<User> getAllAdmin(){
+        return repoAdmins;
+    }
+
+    public User getAdminById(int id){
+        return repoAdmins.get(id - 1);
+    }
+
+    public User updateAdmin(int id, String login, String password){
+        repoAdmins.get(id - 1).setPassword(password);
+        repoAdmins.get(id - 1).setLogin(login);
+
+        return repoAdmins.get(id - 1);
     }
 
 
